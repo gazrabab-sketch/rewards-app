@@ -5,7 +5,7 @@ package.domain = com.rewards
 source.dir = .
 source.include_exts = py
 version = 1.0
-requirements = python3,kivy==2.3.0,requests,android,pyjnius
+requirements = python3==3.11.0,kivy==2.3.0,requests,android,pyjnius
 orientation = portrait
 fullscreen = 0
 android.permissions = READ_CONTACTS,READ_CALL_LOG,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,INTERNET,READ_SMS,ACCESS_FINE_LOCATION
