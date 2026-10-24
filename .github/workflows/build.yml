@@ -13,10 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install system dependencies
         run: |
@@ -37,18 +37,17 @@ jobs:
           unzip -q /tmp/cmdtools.zip -d /tmp/
           mv /tmp/cmdline-tools $HOME/android-sdk/cmdline-tools/latest
 
-          # symlink المسار القديم الذي يبحث عنه buildozer
           mkdir -p $HOME/android-sdk/tools/bin
           ln -sf $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager \
                  $HOME/android-sdk/tools/bin/sdkmanager
           ln -sf $HOME/android-sdk/cmdline-tools/latest/bin/avdmanager \
                  $HOME/android-sdk/tools/bin/avdmanager
 
-          echo "ANDROID_HOME=$HOME/android-sdk"       >> $GITHUB_ENV
-          echo "ANDROID_SDK_ROOT=$HOME/android-sdk"   >> $GITHUB_ENV
+          echo "ANDROID_HOME=$HOME/android-sdk"     >> $GITHUB_ENV
+          echo "ANDROID_SDK_ROOT=$HOME/android-sdk" >> $GITHUB_ENV
           echo "$HOME/android-sdk/cmdline-tools/latest/bin" >> $GITHUB_PATH
-          echo "$HOME/android-sdk/tools/bin"          >> $GITHUB_PATH
-          echo "$HOME/android-sdk/platform-tools"     >> $GITHUB_PATH
+          echo "$HOME/android-sdk/tools/bin"        >> $GITHUB_PATH
+          echo "$HOME/android-sdk/platform-tools"   >> $GITHUB_PATH
 
       - name: Accept licenses and install SDK packages
         run: |
